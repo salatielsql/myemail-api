@@ -1,0 +1,25 @@
+{
+  "name": "mymail-api",
+  "scripts": {
+    "dev": "bun run --watch src/index.local.ts",
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "migrations:generate": "drizzle-kit generate --config=./src/config/drizzle.config.ts",
+    "migrations:run": "drizzle-kit migrate --config=./src/config/drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config=./src/config/drizzle.config.ts"
+  },
+  "dependencies": {
+    "@hono/zod-openapi": "^0.16.0",
+    "@hono/zod-validator": "^0.2.2",
+    "@libsql/client": "^0.10.0",
+    "@scalar/hono-api-reference": "^0.5.143",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.33.0",
+    "hono": "^4.5.9",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "drizzle-kit": "^0.24.2",
+    "wrangler": "^3.57.2"
+  }
+}
